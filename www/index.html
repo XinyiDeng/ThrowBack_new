@@ -1,0 +1,599 @@
+<html>
+    <head>
+        <title>Throwback</title>
+        <script type="text/javascript" charset="utf-8" src="cordova-2.2.0.js"></script>
+        <script type="text/javascript" charset="utf-8" src="DatePicker.js"></script>
+        <script type="text/javascript" charset="utf-8" src="DatePicker.js"></script>
+        <script type="text/javascript" charset="utf-8" src="json2.js"></script>
+        <script src="jquery-1.7.1.min.js"></script>
+        <script src="jquery.mobile-1.2.0/jquery.mobile-1.2.0-rc.1.min.js"></script>
+        <link rel="stylesheet" href="jquery.mobile-1.2.0/jquery.mobile-1.2.0-rc.1.css" />
+        <link rel="stylesheet" href="jquery.mobile-1.2.0/jquery.mobile.structure-1.2.0-rc.1.css" />
+      <!--  <script type="text/javascript" charset="utf-8" src="mobiscroll-2.2/js/mobiscroll-2.2.custom.min.js"/> -->
+     <!--   <link rel="stylesheet" href="jquery.mobile-1.2.0/jquery.mobile.structure-1.2.0-rc.1.min.css" /> -->
+        <!--<link rel="stylesheet" href="jquery.mobile-1.2.0/jquery.mobile.theme-1.2.0-rc.1.css" />
+         <link rel="stylesheet" href="jquery.mobile-1.2.0/jquery.mobile.theme-1.2.0-rc.1.min.css" /> -->
+        
+        <!-- bin/jquery.slider.min.css -->
+        <link rel="stylesheet" href="js-slider/css/jslider.css" type="text/css">
+            <link rel="stylesheet" href="js-slider/css/jslider.blue.css" type="text/css">
+                <link rel="stylesheet" href="js-slider/css/jslider.plastic.css" type="text/css">
+                    <link rel="stylesheet" href="js-slider/css/jslider.round.css" type="text/css">
+                        <link rel="stylesheet" href="js-slider/css/jslider.round.plastic.css" type="text/css">
+                            <!-- end -->
+                            
+                            <!-- bin/jquery.slider.min.js -->
+                            <script type="text/javascript" src="js-slider/js/jshashtable-2.1_src.js"></script>
+                            <script type="text/javascript" src="js-slider/js/jquery.numberformatter-1.2.3.js"></script>
+                            <script type="text/javascript" src="js-slider/js/tmpl.js"></script>
+                            <script type="text/javascript" src="js-slider/js/jquery.dependClass-0.1.js"></script>
+                            <script type="text/javascript" src="js-slider/js/draggable-0.1.js"></script>
+                            <script type="text/javascript" src="js-slider/js/jquery.slider.js"></script>
+                            <!-- end -->
+                            
+                            
+                            
+                            <script type="text/javascript" charset="utf-8" src="throwback.js"></script>
+                            <meta content="width=device-width,minimum-scale=1,maximum-scale=1" name="viewport">
+                                <style type="text/css">
+                                    @font-face {
+                                        font-family: "Thirsty Script";
+                                        font-weight: normal;
+                                        font-style: normal;
+                                        src: url("jquery.mobile-1.2.0/font/ThirstyScriptMedium.otf") format("opentype");
+                                    }
+                                    
+                                    @font-face {
+                                        font-family: "Thirsty Script";
+                                        font-weight: bold;
+                                        font-style: normal;
+                                        src: url("jquery.mobile-1.2.0/font/ThirstyScriptBlack.otf") format("opentype");
+                                    }
+                                    
+                                    .ui-page {
+                                        
+                                       background: url('jquery.mobile-1.2.0/images/bg.png') 0 0  fixed !important;
+                                       
+                                    }
+                                    .ui-content{
+                                        background: transparent;
+                                    }
+                                    .ui-radio .ui-btn {
+                                        font-family: "Thirsty Script";
+                                        color: rgb(24,49,89);
+                                        left: 18px;
+                                        font-weight:normal;
+                                        width: 120px;
+                                        height: 47px;
+                                        border: none;
+                                        background: url('jquery.mobile-1.2.0/images/radio_off.png'); no-repeat rgba(0, 0, 0, 0.4) ;
+                                    }
+                                    .ui-radio .ui-btn  .ui-btn-inner{
+                                        padding-top: .4em;
+                                        font-size: 20px;
+                                    }
+                                    .ui-radio .ui-radio-on {
+                                        font-family: "Thirsty Script";
+                                        color: rgb(255,255,255);
+                                        font-weight:bold;
+                                        background: url('jquery.mobile-1.2.0/images/radio_on.png'); no-repeat rgba(0, 0, 0, 0.4) ;
+                                        
+                                    }
+                                    .ui-radio:nth-child(2) {
+                                        right:10px;
+                                    }
+                                    .ui-radio:nth-child(3) {
+                                        right:20px;
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                    .ui-mini .ui-radio .ui-btn {
+                                        font-family: "Thirsty Script";
+                                        color: rgb(24,49,89);
+                                        font-weight:normal;
+                                        width: 90px;
+                                        height: 35px;
+                                        border: none;
+                                        background: url('jquery.mobile-1.2.0/images/miniradio_off.png'); no-repeat rgba(0, 0, 0, 0.4) ;
+                                    }
+                                    .ui-mini .ui-radio .ui-btn  .ui-btn-inner{
+                                        padding-top: .4em;
+                                        font-size: 20px;
+                                    }
+                                    .ui-mini .ui-radio .ui-radio-on {
+                                        font-family: "Thirsty Script";
+                                        color: rgb(255,255,255);
+                                        font-weight:bold;
+                                        background: url('jquery.mobile-1.2.0/images/miniradio_on.png'); no-repeat rgba(0, 0, 0, 0.4) ;
+                                        
+                                    }
+                                    .ui-mini .ui-radio:nth-child(2) {
+                                        right:10px;
+                                    }
+                                    
+                                    
+                                    
+                                    .ui-overlay-c{
+                                        color: none; !important
+                                    }
+                                    .ui-btn-text, .ui-btn-down-b .ui-btn-text{
+                                        font-size: 20px;
+                                    }
+                                    
+                                    .ui-btn-up-b{
+                                        font-family: "Thirsty Script"; !important
+                                        font-size: 20px;
+                                    }
+                                    .ui-btn-up-g, .ui-btn-up-b .ui-btn-text{
+                                        font-size: 20px;
+                                    }
+                                    
+                                    .ui-btn-down-b{
+                                        font-family: "Thirsty Script"; !important
+                                        font-size: 20px;
+                                        
+                                    }
+                                    .ui-btn-text, .ui-btn-down-b .ui-btn-text{
+                                        font-size: 20px;
+                                    }
+                                    
+                                    
+                                    .ui-btn-text, .ui-btn-down-g .ui-btn-text{
+                                        font-size: 20px;
+                                    }
+                                    
+                                    .ui-btn-up-c{
+                                        font-family: "Thirsty Script"; !important
+                                        font-size: 16px;
+                                        text-align: center:
+                                    }
+                                    .ui-btn-up-c .ui-btn-text{
+                                        font-size: 16px;
+                                        text-align: center:
+                                    }
+                                    
+                                    .ui-btn-down-c{
+                                        font-family: "Thirsty Script"; !important
+                                        font-size: 16px;
+                                        text-align: center:
+                                        
+                                    }
+                                    .ui-btn-hover-c{
+                                        font-family: "Thirsty Script"; !important
+                                        color: white;
+                                        font-size: 16px;
+                                        text-align: center:
+                                        
+                                    }
+                                    .ui-btn-down-c .ui-btn-text{
+                                        font-size: 16px;
+                                        color:white;
+                                        text-align: center: !important
+                                    }
+                                    
+                                    .ui-btn-up-d{
+                                        font-family: "Thirsty Script"; !important
+                                        font-size: 20px;
+                                    }
+                                    .ui-btn-up-d .ui-title{
+                                        font-family: "Thirsty Script"; !important
+                                        font-size: 20px;
+                                    }
+                                    
+                                    .ui-btn-down-d{
+                                        font-family: "Thirsty Script"; !important
+                                        font-size: 20px;
+                                    }
+                                    .ui-btn-hover-d{
+                                        font-family: "Thirsty Script"; !important
+                                        font-size: 20px;
+                                        color: rgb(24,49,89);
+                                    }
+                                    .ui-btn-down-d .ui-btn-text{
+                                        font-family: "Thirsty Script"; !important
+                                        font-size: 20px;
+                                    }
+                                    
+                                    .ui-body-d, .ui-body-d input, .ui-body-d select, .ui-body-d textarea, .ui-body-d button {
+                                        font-family: "Thirsty Script"; !important
+                                        font-size: 20px;
+                                    }
+                                    
+                                    
+                                    .ui-btn-up-e{
+                                        font-family: "Thirsty Script"; !important
+                                        font-style: normal;
+                                        font-size: 14px;
+                                    }
+                                    .ui-btn-up-e .ui-btn-text{
+                                        font-size: 14px;
+                                        font-style: normal;
+                                    }
+                                    
+                                    .ui-btn-down-e{
+                                        font-family: "Thirsty Script"; !important
+                                        font-size: 14px;
+                                        font-style: normal;
+                                    }
+                                    .ui-btn-down-e .ui-btn-text{
+                                        font-family: "Thirsty Script"; !important
+                                        font-size: 14px;
+                                        font-style: normal;
+                                    }
+                                    
+                                    ui-btn-up-g{
+                                        font-family: "Helvetica"; !important
+                                        font-weight: bold; !important
+                                        font-size: 20px;
+                                        text-align: center:
+                                    }
+                                    .ui-btn-up-g .ui-btn-text{
+                                        font-size: 20px;
+                                        font-weight: bold;
+                                        color: rgb(24,49,89);
+                                        text-align: center:
+                                    }
+                                    
+                                    .ui-btn-down-g{
+                                        font-family: "Helvetica"; !important
+                                        font-weight: bold; !important
+                                        text-align: center:
+                                    }
+                                    .ui-btn-down-g .ui-btn-text{
+                                        font-size: 20px;
+                                        color:white;
+                                        font-weight: bold; !important
+                                        text-align: center: !important
+                                    }
+                                    
+                                    .ui-btn-up-h .ui-btn-text{
+                                        font-size: 20px;
+                                        font-weight: bold;
+                                        color: white;;
+                                        text-align: center:
+                                    }
+                                    .ui-btn-down-h .ui-btn-text{
+                                        font-size: 20px;
+                                        color:rgb(24,49,89);
+                                        font-weight: bold; !important
+                                        text-align: center: !important
+                                    }
+                                    
+                                    
+                                    .topHomeButton{
+                                        margin-top: 33%; !important
+                                        
+                                        
+                                    }
+                                    
+                                    .bottomHomeButton{
+                                        margin-top: 25%; !important
+                                        
+                                    }
+                                    
+                                    input::-webkit-input-placeholder {
+                                        color:    rgba(24,49,89,.6);
+                                    }
+                                    
+                                    h5{
+                                        margin: 5px;
+                                        padding: 5px;
+                                        font-size: 16px;
+                                        text-align: center;
+                                        
+                                    }
+                                    
+                                    h6{
+                                        margin-top: 5px;
+                                        padding-top: 5px;
+                                        text-align: center;
+                                        font-size: 14px;
+                                        
+                                    }
+                                    
+                                    h3{
+                                        
+                                        font-family: "Thirsty Script"; !important
+                                        text-align: center;
+                                        font-size: 40px;
+                                    }
+                                    h4{
+                                        font-family: "Thirsty Script"; !important
+                                        text-align: center;
+                                        font-size: 18px;
+                                    }
+                                    
+                                    .progress-bar {
+                                        background-color: #CCC;
+                                        text-align: left;
+                                        height: 25px;
+                                        width: 245px;
+                                        -webkit-border-radius: 5px;
+                                        border-radius: 5px;
+                                        -webkit-box-shadow: 0 1px 5px #FFF inset, 0 1px 0 #CCC;
+                                        box-shadow: 0 1px 5px #FFF inset, 0 1px 0 #CCC;
+                                    }
+                                    
+                                    .progress-bar span {
+                                        display: inline-block;
+                                        height: 100%;	
+                                        -moz-border-radius: 3px;
+                                        -webkit-border-radius: 3px;
+                                        border-radius: 3px;
+                                        -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+                                        -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+                                        box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+                                        -webkit-transition: width .4s ease-in-out;
+                                        -moz-transition: width .4s ease-in-out;
+                                        -ms-transition: width .4s ease-in-out;
+                                        -o-transition: width .4s ease-in-out;
+                                        transition: width .4s ease-in-out;    
+                                    }
+                                    
+                                    .blue span {
+                                        background-color:  rgb(24,49,89);
+                                       
+                                    }
+                                    
+                                    .stripes span {
+                                        -webkit-background-size: 30px 30px;
+                                        -moz-background-size: 30px 30px;
+                                        background-size: 30px 30px;
+                                        background-image: -webkit-gradient(linear, left top, right bottom,
+                                        color-stop(.25, rgba(255, 255, 255, .15)), color-stop(.25, transparent),
+                                        color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .15)),
+                                        color-stop(.75, rgba(255, 255, 255, .15)), color-stop(.75, transparent),
+                                        to(transparent));
+                                        background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                                        transparent 75%, transparent);
+                                        background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                                        transparent 75%, transparent);
+                                        background-image: -ms-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                                        transparent 75%, transparent);
+                                        background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                                        transparent 75%, transparent);
+                                        background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                                        transparent 75%, transparent);            
+                                        
+                                        -webkit-animation: animate-stripes 3s linear infinite;
+                                        -moz-animation: animate-stripes 3s linear infinite;       		
+                                    }
+                                    
+                                    @-webkit-keyframes animate-stripes { 
+                                        0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+                                    }
+                                    
+                                    .shine span {
+                                        position: relative;
+                                    }
+                                    
+                                    .shine span::after {
+                                        content: '';
+                                        opacity: 0;
+                                        position: absolute;
+                                        top: 0;
+                                        right: 0;
+                                        bottom: 0;
+                                        left: 0;
+                                        background: #fff;
+                                        -moz-border-radius: 3px;
+                                        -webkit-border-radius: 3px;
+                                        border-radius: 3px;			
+                                        
+                                        -webkit-animation: animate-shine 2s ease-out infinite;
+                                        -moz-animation: animate-shine 2s ease-out infinite; 			
+                                    }
+                                    
+                                    @-webkit-keyframes animate-shine { 
+                                        0% {opacity: 0; width: 0;}
+                                        50% {opacity: .5;}
+                                        100% {opacity: 0; width: 95%;}
+                                    }
+                                    
+                                    .glow span {
+                                        -moz-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;
+                                        -webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;
+                                        box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;
+                                        
+                                        -webkit-animation: animate-glow 1s ease-out infinite;
+                                        -moz-animation: animate-glow 1s ease-out infinite;
+                                    }
+                                    
+                                    @-webkit-keyframes animate-glow {
+                                        0% { -webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;}
+                                        50% { -webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, .3) inset, 0 -5px 5px rgba(255, 255, 255, .3) inset;} 
+                                        100% { -webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;}
+                                    }
+                                    
+                                    div.progress {
+                                        font-family: Helvetica;
+                                        background-color: rgba(0,0,0,.7);
+                                        color: white;
+                                        font-size: 18px; 
+                                        font-weight: bold; 
+                                        height: 100%;
+                                        line-height: 100px; 
+                                        margin: 0 auto; 
+                                        position: absolute; 
+                                        text-align: center; 
+                                        width: 100%;
+                                        top: 0px;
+                                        z-index: 120;
+                                    }
+                                    
+                                    div.progress_box{
+                                        font-family: Helvetica;
+                                        background-image: url('img/loading.gif');
+                                        background-position: 50% center;
+                                        background-repeat: no-repeat;
+                                        -webkit-border-radius: 10px;
+                                        -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+                                        border-color: rgb(24,49,89);
+                                        background-color: #FFF;
+                                        color: rgb(24,49,89);
+                                        font-size: 18px;
+                                        font-weight: bold; 
+                                        height: 120px; 
+                                        left: 25px;
+                                        line-height: 75px;
+                                        margin: 0 auto; 
+                                        position: absolute; 
+                                        text-align: center; 
+                                        top: 120px; 
+                                        width: 275px;
+                                        z-index: 121;
+                                        
+                                    }
+                                    
+                                                                     
+                                    </style>
+                                
+                                </head>
+    <body>
+        
+        
+        <!----------------------------------------------REGISTER-------------------------------------------------------->
+        
+        <div data-role="page" id="register_entry">
+            <div data-role="content">
+                <div data-role="fieldcontain" data-mini="true">
+                    <fieldset data-role="controlgroup" data-type="horizontal" >
+                        <input type="radio" name="signin" id="register" value="register" checked="checked"  data-inline="true"/>
+                        <label for="register">Register</label>
+                        <input type="radio" name="signin" id="login" value="login" data-inline="true" />
+                        <label for="login">Login</label>
+                    </fieldset>
+                </div><!--field contains-->
+                <div id="registerPage">
+                    
+                    <div data-role="fieldcontain">
+                        <h6>Please register your email with Throwback </h6>
+                        <input type="email" placeholder="EMAIL" name="register_email" class= "clearit" id="register_email" autocapitalize="off"  autocorrect="off" autocomplete="off" />
+                    </div> <!--field contains-->
+                    <div data-role="fieldcontain">
+                        <input type="password" placeholder="CREATE A PASSWORD" class= "clearit" name="register_password" id="register_password" autocapitalize="off"  autocorrect="off" autocomplete="off"/>
+                    </div> <!--field contains-->
+                    <input type="button" class="show-page-loading-msg" onclick="registerEmail();" data-theme="b" value="Register"/>
+                </div><!--registerPage-->
+                <div id="loginPage">
+                    <div data-role="fieldcontain">
+                        <input type="email" placeholder="EMAIL" name="login_email" class= "clearit" id="login_email" autocapitalize="off" autocorrect="off" autocomplete="off" />
+                    </div> <!--field contains-->
+                    <div data-role="fieldcontain">
+                        <input type="password" placeholder="ENTER PASSWORD" name="login_password" class= "clearit" id="login_password" autocapitalize="off"  autocorrect="off" autocomplete="off" />
+                    </div> <!--field contains-->
+                    <input type="button" class="show-page-loading-msg" onclick="checkEmail();" data-theme="b" value="Login"/>
+                </div><!--registerPage-->
+            </div><!-- /content -->
+            <div data-role="footer" data-position="fixed" id="reset" data-theme="c">
+                <a href="#reset" data-role="button" data-theme="c" data-transition="slide">Reset my Password</a>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+        
+        
+        <!----------------------------------------------RESET------------------------------------------------------->
+        
+        <div data-role="page" id="reset">
+            <div data-role="header" data-theme="d">
+                <a href="#" data-rel="back" value="Back" data-theme="e">Back</a>
+                <h3>Reset</h3>
+            </div><!-- /header -->
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <h5>Please enter your email so we can send you a link to reset your password </h5><br>
+                    <input type="email" placeholder="Email" name="reset_email" id="reset_email" autocapitalize="off" class="clearit" autocorrect="off" autocomplete="off" />
+                    <input type="button" class="show-page-loading-msg" onclick="resetPassword()" data-theme="d" value="Reset Password" data-direction="reverse" data-transition="slide"/>
+                </div> <!--field contains-->
+            </div><!-- /content -->
+        </div><!-- /page -->
+        
+        
+        <!---------------------------------------------------------------------------------------------->
+        
+        
+        
+        <!----------------------------------------------HOME--------------------------------------------------------------->
+        
+        <div data-role="page" id="home">
+            <div data-role="content">
+                
+                <a href="#" onclick="cameraButton();" class="topHomeButton" data-role="button" data-theme="h">Capture Now</a> 
+                
+                <a href="#" onclick="albumButton();" class="bottomHomeButton" data-role="button" data-theme="g">Grab the past</a>
+            </div><!-- /content -->
+            <div data-role="footer" data-position="fixed" data-theme="c">
+                <div data-role="button" onclick="logOut();" data-theme="c">Log out</div>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+        
+        
+        <div data-role="page" id="displayimage">
+            <div data-role="header" style="padding:0px;" data-theme="f" />
+            <a href="#" onclick="cancel();" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
+        </div><!-- /header -->
+        <div data-role="content">
+            <br><br>
+            <form id="submitForm">
+                <div data-role="fieldcontain" data-mini="true">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <table style="width:100% ">
+                            <input type="radio" name="return" id="choose" value="choose" data-inline="true" data-role="mobiscroll" data-options="JSON options" />
+                            <label for="choose">Date</label>
+                            <input type="radio" name="return" id="range" value="random" data-inline="true" />
+                            <label for="range">Range</label>
+                            <input type="radio" name="return" id="random" value="surprise" checked="checked" class="ui-btn-active" data-inline="true" />
+                            <label for="random">Surprise</label>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <div id="selectrandom">
+                        <input id="rangeslider" type="slider" name="rangeslider" value="1;60" />
+                    </div>                                            
+                    <h5><span id="date" class="clearit"></span></h5>
+                </div> <!-- field contain--->
+                <div data-role="fieldcontain" id="selectTags">
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                        <table style="width:100% ">
+                            <tr>
+                                <td style="width: 25%">
+                                    <legend ><h6>Throw to:</h6> </legend>
+                                </td>
+                                <td style="width: 85%">
+                                    <input type="radio" name="tagchoice" id="me" value="me" checked="checked" data-inline="true"/>
+                                    <label for="me">Me</label>
+                                    <input type="radio" name="tagchoice" id="us" value="us" data-inline="true" />
+                                    <label for="us">Us</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <div id="tags">
+                        <table style="width:100% ">
+                            <tr>
+                                <td style="width: 10%"><label for="name"><h6>Tags: </h6></label></td>
+                                <td style="width: 95%"> <input type="text" placeholder="Seperate emails by comma" data-mini="true" class="clearit" data-inline="true" name="tag_email" id="tag_email" autocapitalize="off"  autocorrect="off" autocomplete="off" /></td>
+                            </tr>
+                        </table>
+                    </div><!-- tags div--->
+                </div> <!-- field contain--->
+                <div data-role="fieldcontain" id="caption">
+                    <textarea placeholder="Add a message"  class="clearit" name="message" id="message" autocapitalize="on" autocorrect="on" autocomplete="on"></textarea>
+                </div> <!-- field contain--->
+                <input type="button"  data-theme="b" value="Throw it Back" onclick="getFormValues();"/>
+            </form>
+            <div data-role="popup" id="progressPop" data-theme="j" data-overlay-theme="i" data-transition="flip" data-corners="true" dismissable="false">
+                Sending
+                <br><br>
+                <div id="progressBar" class="progress-bar blue stripes"><span style="width: 0%"></span></div>
+            </div>
+        </div><!-- /content -->
+        </div><!-- /page -->
+    </body>
+</html>
